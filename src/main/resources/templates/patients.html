@@ -11,11 +11,13 @@
         <div class="card">
                 <div class="card-header" style="color: crimson; font-weight: bold; size:20px;">Liste Des Patients</div>
                 <div class="card-body">
-                    <form th:method="get" th:action="@{/}">
-                        <label>Le mot clé : </label>
-                        <input th:type="text" name="keyword">
-                        <button type="submit" class="btn btn-primary">Rechercher</button>
-                    </form>
+                    <div align="center">
+                        <form th:method="get" th:action="@{/}">
+                            <label>Le mot clé : </label>
+                            <input th:type="text" name="keyword" th:value="keyword">
+                            <button type="submit" class="btn btn-primary">Rechercher</button>
+                        </form>
+                    </div>
                     <table class="table">
                         <thead>
                         <tr>
@@ -41,7 +43,7 @@
                     <ul class="nav nav-pills">
                         <li th:each="page,status:${pages}">
                             <a th:text="${status.index}" th:class="${status.index==currentPage?'btn btn-danger ms-1':'btn btn-outline-danger ms-1'}"
-                                th:href="@{/(page=${status.index})}"
+                                th:href="@{/(page=${status.index}, keyword=${keyword})}"
                             ></a>
                         </li>
                     </ul>
