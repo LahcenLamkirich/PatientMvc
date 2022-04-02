@@ -45,7 +45,7 @@ public class PatientController {
     @GetMapping("/delete")
     public String Delete(Long id, String keyword, int page){
         patientRepository.deleteById(id);
-        return "redirect:/?page="+page+"$keyword="+keyword;
+        return "redirect:/?page="+page+"&keyword="+keyword;
     }
 
 
