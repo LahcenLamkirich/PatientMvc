@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
+import java.util.ArrayList;
+
 
 @SpringBootApplication
 public class PatientMvcApplication implements CommandLineRunner{
@@ -20,7 +22,11 @@ public class PatientMvcApplication implements CommandLineRunner{
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello World !!");
+        ArrayList<Patient> list = (ArrayList<Patient>) patientRepository.findAll();
+        for(int i = 1 ; i < list.size(); i++){
+            System.out.println(list.get(i).getName());
+        }
+
     }
 
 }
