@@ -24,7 +24,6 @@ public class PatientMvcApplication {
     @Bean
     CommandLineRunner start() {
         return args -> {
-            patientRepository.deleteAll();
             patientRepository.save(new Patient(null,"Lahcen", new Date(), false, 255));
             patientRepository.save(new Patient(null,"Hassan", new Date(), false, 120));
             patientRepository.save(new Patient(null,"Yassine", new Date(), true, 562));
