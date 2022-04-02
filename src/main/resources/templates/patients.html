@@ -10,7 +10,7 @@
 
     <div class="container mt-3">
         <div class="card">
-                <div class="card-header">Liste des patients</div>
+                <div class="card-header" style="color: crimson; font-weight: bold; size:20px;">Liste Des Patients</div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
@@ -32,10 +32,13 @@
                         </tr>
                         </tbody>
                     </table>
-                    <ul>
+                    <ul class="nav nav-pills">
                         <li th:each="page,status:${pages}">
-                            <a th:text="${status.index}"></a>
+                            <a th:text="${status.index}" th:class="${status.index==currentPage?'btn btn-danger ms-1':'btn btn-outline-danger ms-1'}"
+                                th:href="@{/(page=${status.index})}"
+                            ></a>
                         </li>
+
                     </ul>
                 </div>
         </div>
