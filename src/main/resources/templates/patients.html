@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <H2>La liste des patients</H2>
+    <h2>La liste des patients</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Date Naissance</th>
+                <th>Malade</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="p:${patients}">
+                <td th:text="${p.getId()}"></td>
+                <td th:text="${p.getName()}"></td>
+                <td th:text="${p.getDateNaissance()}"></td>
+                <td th:text="${p.isMalade()}"></td>
+                <td th:text="${p.getScore()}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
