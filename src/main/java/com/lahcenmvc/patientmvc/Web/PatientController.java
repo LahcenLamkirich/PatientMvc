@@ -2,8 +2,11 @@ package com.lahcenmvc.patientmvc.Web;
 
 import com.lahcenmvc.patientmvc.Repositrories.PatientRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/")
 public class PatientController {
 
     private PatientRepository patientRepository ;
@@ -13,6 +16,10 @@ public class PatientController {
         this.patientRepository = patientRepository;
     }
 
-    
+    @GetMapping("")
+    public String getAllPatients(){
+        return "patients";
+    }
+
 
 }
