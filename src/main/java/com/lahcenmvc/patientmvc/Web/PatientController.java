@@ -42,4 +42,11 @@ public class PatientController {
         return "Test";
     }
 
+    @GetMapping("/delete")
+    public String Delete(Long id, String keyword, int page){
+        patientRepository.deleteById(id);
+        return "redirect:/?page="+page+"$keyword"+keyword;
+    }
+
+
 }

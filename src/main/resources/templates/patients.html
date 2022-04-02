@@ -9,7 +9,7 @@
 
     <div class="container mt-3">
         <div class="card">
-                <div class="card-header" style="color: crimson; font-weight: bold; size:20px;">Liste Des Patients</div>
+            <a th:href="@{/} "><div class="card-header" style="color: crimson; font-weight: bold; size:20px;text-decoration: underline solid red;"> Liste Des Patients </div></a>
                 <div class="card-body">
                     <div align="center">
                         <form th:method="get" th:action="@{/}">
@@ -35,8 +35,8 @@
                             <td th:text="${p.getDateNaissance()}"></td>
                             <td th:text="${p.isMalade()}"></td>
                             <td th:text="${p.getScore()}"></td>
-                            <td><button class="btn btn-primary">Edit</button></td>
-                            <td><button class="btn btn-danger">Delete</button></td>
+                            <td><a class="btn btn-primary">Edit</a></td>
+                            <td><a onclick="confirm('Are You Sure !')" class="btn btn-danger" th:href="@{delete(id=${p.getId()}, keyword=${keyword}, page=${currentPage})}">Delete</a></td>
                         </tr>
                         </tbody>
                     </table>
