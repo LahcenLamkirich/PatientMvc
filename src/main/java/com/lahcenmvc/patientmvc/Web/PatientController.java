@@ -59,7 +59,7 @@ public class PatientController {
     public String save(Model model, Patient patient){
         patientRepository.save(patient);
         System.out.println(patient);
-        return "formPatients";
+        return "redirect:/";
     }
 
     @GetMapping("/edit")
