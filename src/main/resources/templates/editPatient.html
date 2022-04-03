@@ -16,8 +16,8 @@
         <div align="center">
             <form th:class="m-lg-5" method="get" th:action="@{save}">
                 <div class="mb-3 mt-3 col-3">
-                    <label for="idPatient" class="form-label">Nom Patient</label>
-                    <input type="text" class="form-control " id="idPatient" name="id" th:value="${patient.id}">
+                    <label for="idPatient" class="form-label">ID Patient</label>
+                    <input type="hidden" class="form-control" id="idPatient" name="id" th:value="${patient.id}">
                 </div>
                 <div class="mb-3 mt-3 col-3">
                     <label for="nomPatient" class="form-label">Nom Patient</label>
