@@ -12,26 +12,28 @@
 <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank" style="color:#000"></a>
     <div layout:fragment="custom-content">
 
-        <h1> Form Patient </h1>
-        <form th:class="m-lg-5">
-            <div class="mb-3 mt-3 col-3">
-                <label for="nomPatient" class="form-label">Email address</label>
-                <input type="text" class="form-control " id="nomPatient">
-            </div>
-            <div class="mb-3 mt-3 col-3">
-                <label for="dateNaissance" class="form-label">Date de Naissance </label>
-                <input type="date" class="form-control " id="dateNaissance">
-            </div>
-            <div class="mb-3 mt-3 col-3">
-                <label for="malade" class="form-label">malade</label>
-                <input type="text" class="form-control " id="malade">
-            </div>
-            <div class="mb-3 mt-3 col-3">
-                <label for="score" class="form-label">score</label>
-                <input type="text" class="form-control " id="score">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <h1 align="center" th:class="mt-3"> Form Patient </h1>
+        <div align="center">
+            <form th:class="m-lg-5" method="post" th:action="@{save}">
+                <div class="mb-3 mt-3 col-3">
+                    <label for="nomPatient" class="form-label">Nom Patient</label>
+                    <input type="text" class="form-control " id="nomPatient" th:value="${patient.getName()}">
+                </div>
+                <div class="mb-3 mt-3 col-3">
+                    <label for="dateNaissance" class="form-label">Date de Naissance</label>
+                    <input type="date" class="form-control " id="dateNaissance" th:value="${patient.getDateNaissance()}">
+                </div>
+                <div class="mb-3 mt-3 col-3">
+                    <label for="malade" class="form-label">malade</label>
+                    <input type="checkbox" class="form-control " id="malade" th:checked="${patient.isMalade()}">s
+                </div>
+                <div class="mb-3 mt-3 col-3">
+                    <label for="score" class="form-label">score</label>
+                    <input type="text" class="form-control " id="score" th:value="${patient.getScore()}">
+                </div>
+                <button type="submit" class="btn btn-primary" th:href="">Submit</button>
+            </form>
+        </div>
     </div>
 
 </body>

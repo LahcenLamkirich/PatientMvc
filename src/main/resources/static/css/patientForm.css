@@ -6,7 +6,6 @@ h1 {
     font-size: calc( 1em + 30vmin );
     font-weight: 900;
     color: tomato;
-
     --x-offset: -0.0625em;
     --y-offset: 0.0625em;
     --stroke: 0.025em;
@@ -26,11 +25,7 @@ h1 {
             var(--stroke-color);
 
 }
-/* for browsers that support spread, added in
-https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
-currently: none browsers! none of them!
-I can't even find a test:
-https://wpt.fyi/results/css/css-text-decor */
+
 @supports ( text-shadow: 1px 1px 1px 1px black ) {
     h1 {
         text-shadow:

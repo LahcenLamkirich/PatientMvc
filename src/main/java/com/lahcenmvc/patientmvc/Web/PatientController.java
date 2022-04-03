@@ -50,7 +50,10 @@ public class PatientController {
     }
 
     @GetMapping("/formPatient")
-    public String formPatient(){
+    public String formPatient(Model model){
+        model.addAttribute("patient", new Patient()) ;
         return "formPatients" ;
     }
+
+
 }
