@@ -62,4 +62,11 @@ public class PatientController {
         return "formPatients";
     }
 
+    @GetMapping("/edit")
+    public String Edit(Model model, Long id){
+        Patient patient = patientRepository.findById(id).get();
+        model.addAttribute("patient", patient) ;
+        return "formPatients";
+    }
+
 }
