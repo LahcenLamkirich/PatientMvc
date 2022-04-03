@@ -17,6 +17,7 @@
             <form th:class="m-lg-5" method="get" th:action="@{save}">
                 <div class="mb-3 mt-3 col-3">
                     <label for="idPatient" class="form-label">ID Patient</label>
+                    <label th:text="${patient.id}"></label>
                     <input type="hidden" class="form-control" id="idPatient" name="id" th:value="${patient.id}">
                 </div>
                 <div class="mb-3 mt-3 col-3">
@@ -35,7 +36,7 @@
                     <label for="score" class="form-label">score</label>
                     <input type="text" class="form-control" name="score" id="score" th:value="${patient.score}">
                 </div>
-                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="submit" class="btn btn-primary">Edit</button>
             </form>
         </div>
     </div>
