@@ -49,7 +49,7 @@ public class PatientController {
         return patientRepository.findAll();
     }
 
-    @GetMapping("/formPatients")
+    @GetMapping("/formPatient")
     public String formPatient(){
         return "formPatients" ;
     }
