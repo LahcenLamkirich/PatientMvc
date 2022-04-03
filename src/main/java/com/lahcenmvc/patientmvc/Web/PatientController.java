@@ -37,16 +37,20 @@ public class PatientController {
         return "patients";
     }
 
-    @GetMapping("/all")
-    public @ResponseBody String patient(){
-        return "Test";
-    }
-
     @GetMapping("/delete")
     public String Delete(Long id, String keyword, int page){
         patientRepository.deleteById(id);
         return "redirect:/?page="+page+"&keyword="+keyword;
     }
 
+    @GetMapping("/patientslist")
+    @ResponseBody
+    public List<Patient> patientList(){
+        return patientRepository.findAll();
+    }
 
+    @GetMapping("/formPatients")
+    public String formPatient(){
+        return "formPatients" ;
+    }
 }
