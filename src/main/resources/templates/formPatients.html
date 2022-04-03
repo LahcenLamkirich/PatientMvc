@@ -23,15 +23,15 @@
                     <label for="dateNaissance" class="form-label">Date de Naissance</label>
                     <input type="date" class="form-control " id="dateNaissance" th:value="${patient.getDateNaissance()}">
                 </div>
-                <div class="mb-3 mt-3 col-3">
+                <div>
                     <label for="malade" class="form-label">malade</label>
-                    <input type="checkbox" class="form-control " id="malade" th:checked="${patient.isMalade()}">s
+                    <input type="checkbox" id="malade" th:checked="${patient.isMalade()}">
                 </div>
                 <div class="mb-3 mt-3 col-3">
                     <label for="score" class="form-label">score</label>
                     <input type="text" class="form-control " id="score" th:value="${patient.getScore()}">
                 </div>
-                <button type="submit" class="btn btn-primary" th:href="">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>

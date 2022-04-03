@@ -55,5 +55,10 @@ public class PatientController {
         return "formPatients" ;
     }
 
+    @GetMapping("/save")
+    public String save(Model model, Patient patient){
+        patientRepository.save(patient);
+        return "formPatients";
+    }
 
 }
