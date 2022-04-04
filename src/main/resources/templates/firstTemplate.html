@@ -10,25 +10,43 @@
 </head>
 <body>
             <!-- Here i will add the navbar   -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand m-lg-2" th:href="@{/}" href="">Patients </a>
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" th:href="@{/formPatient}">Form Patient <span class="sr-only"></span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+<!--            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                    <span class="navbar-toggler-icon"></span>-->
+<!--                </button>-->
+<!--                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">-->
+<!--                    <a class="navbar-brand m-lg-2" th:href="@{/}" href="">Patients </a>-->
+<!--                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
+<!--                        <li class="nav-item active">-->
+<!--                            <a class="nav-link" th:href="@{/formPatient}">Form Patient <span class="sr-only"></span></a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                    <ul class="navbar-nav ms-5" >-->
+<!--                        <li class="nav-item active ms-l" >-->
+<!--                            <a class="nav-link">Username<span class="sr-only"></span></a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </nav>-->
+            <!--  Navbar using bootstrap Generator -->
+            <section>
+                <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                    <div class="container">
+                        <a class="navbar-brand h4 text-decoration-none" href="#">
+                            <img src="zeus-assets/logo/logo-zeus-red.svg" alt="" style="height: 28px;" width="auto">
+                        </a>
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item"><a class="nav-link" th:href="@{/}">Patients</a></li>
+                                <li class="nav-item"><a class="nav-link" th:href="@{/formPatient}"> Patient Form </a></li>
+                                <li class="nav-item"><a class="nav-link" href="#"> Company </a></li>
+                            </ul>
+                            <div class="d-none d-lg-block"><a class="btn btn-outline-light text-light me-2" href="#">Log In</a><a class="btn btn-danger" href="#">Sign Up</a></div>
+                        </div>
+                    </div>
+                </nav>
+            </section>
+
             <!--Here i do my custom changes -->
             <section layout:fragment="custom-content">
 
